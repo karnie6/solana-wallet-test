@@ -1,6 +1,9 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
+      <wallet-modal-provider>
+        <wallet-multi-button/>
+</wallet-modal-provider>
+    <h1>{{ msg }}</h1> 
     <p>
       For a guide and recipes on how to configure / customize this project,<br>
       check out the
@@ -33,8 +36,13 @@
 
 <script lang="ts">
 import { Options, Vue } from 'vue-class-component';
+import { WalletMultiButton, WalletModalProvider } from '@solana/wallet-adapter-vue-ui';
+
 
 @Options({
+  components: {
+    WalletMultiButton, WalletModalProvider
+  },
   props: {
     msg: String
   }
